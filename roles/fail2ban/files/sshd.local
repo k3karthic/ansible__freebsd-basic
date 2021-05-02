@@ -1,6 +1,6 @@
 [bsd-sshd]
 enabled = true
-action = ipfw[blocktype=drop,port=22,localhost=me]
+action = ipfw-table[name=SSH,port=ssh,protocol=tcp]
 logpath = /var/log/auth.log
 findtime = 600
 maxretry = 3

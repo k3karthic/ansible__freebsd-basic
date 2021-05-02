@@ -4,6 +4,32 @@
     name: py37-fail2ban
     state: latest
 
+- name: configure fail2ban ipfw table
+  ansible.builtin.copy:
+    src: ipfw.fail2ban.rules
+    dest: /usr/local/etc/ipfw.fail2ban.rules
+    owner: root
+    group: wheel
+    mode: "0644"
+
+- name: enable fail2ban ipfw table
+  community.general.sysrc:
+    name: firewall_script
+    value: "/usr/local/etc/ipfw.fail2ban.rules"
+
+- name: restart ipfw
+  ansible.builtin.service:
+    name: ipfw
+    state: restarted
+
+- name: configure fail2ban ipfw-table
+  ansible.builtin.copy:
+    src: ipfw-table.local
+    dest: /usr/local/etc/fail2ban/action.d/ipfw-table.local
+    owner: root
+    group: wheel
+    mode: "0644"
+
 - name: configure sshd jail
   ansible.builtin.copy:
     src: sshd.local
