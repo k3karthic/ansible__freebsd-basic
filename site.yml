@@ -1,0 +1,25 @@
+---
+- name: install common utilities
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: install common
+      community.general.pkgng:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - tmux
+        - htop
+
+- name: configure IPFW
+  hosts: all
+  become: yes
+  roles:
+    - ipfw
+
+- name: install Fail2ban
+  hosts: all
+  become: yes
+  roles:
+    - fail2ban

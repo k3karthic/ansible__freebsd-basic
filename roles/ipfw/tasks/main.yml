@@ -1,0 +1,15 @@
+---
+- name: configure open firewall
+  community.general.sysrc:
+    name: firewall_type
+    value: open
+
+- name: enable ipfw on boot
+  community.general.sysrc:
+    name: firewall_enable
+    value: "YES"
+
+- name: restart ipfw
+  ansible.builtin.service:
+    name: ipfw
+    state: restarted
