@@ -12,13 +12,13 @@
         - tmux
         - htop
 
-- name: configure IPFW
+- name: configure ipfw
   hosts: all
   become: yes
   roles:
     - ipfw
 
-- name: install Fail2ban
+- name: install fail2ban
   hosts: all
   become: yes
   roles:

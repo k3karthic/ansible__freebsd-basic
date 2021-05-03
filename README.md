@@ -1,5 +1,13 @@
 # Ansible - Basic Setup for Ubuntu 20.04
 
+## Requirements
+
+Install the following Ansible modules before running the playbook,
+```
+ansible-galaxy collection install google.cloud
+ansible-galaxy collection install community.general
+```
+
 ## Deploy for Free
 
 You can run one server for free using the [Google Cloud Always Free](https://cloud.google.com/free) tier.
@@ -20,17 +28,12 @@ All public FreeBSD instances are assumed to have a label `os: freebsd`.
     1. Configure the authentication
 1. Set username and ssh authentication in `inventory/group_vars/
 
-If you are using mutliple SSH key pairs, use the following command to add them to ssh-agent before running the playbook.
-```
-eval "$(ssh-agent -s)"
-ssh-add <path to keypair>
-```
-
 ## Playbook Overview
 
 This Ansible playbook performs the following tasks on an Ubuntu server,
 
 1. Install tmux and htop
+1. Enable IPFW
 1. Install and configure Fail2ban for SSH
 
 ## Deployment
