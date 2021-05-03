@@ -60,3 +60,7 @@ Use the following command after running terraform to update the encrypted files,
 ```
 ./bin/encrypt.sh <gpg key id>
 ```
+
+## Acknowledgments
+
+* Reference for fail2ban configuration [https://phrye.com/tools/fail2ban-on-freebsd/](https://phrye.com/tools/fail2ban-on-freebsd/)
