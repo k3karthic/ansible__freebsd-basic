@@ -47,3 +47,11 @@
   ansible.builtin.service:
     name: fail2ban
     state: restarted
+
+- name: configure newsyslog
+  ansible.builtin.copy:
+    src: newsyslog.conf
+    dest: /etc/newsyslog.conf.d/fail2ban.conf
+    owner: root
+    group: wheel
+    mode: "0644"
