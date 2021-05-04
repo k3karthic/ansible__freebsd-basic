@@ -1,4 +1,4 @@
-# Ansible - Basic Setup for Ubuntu 20.04
+# Ansible - Basic Setup for FreeBSD 13
 
 ## Requirements
 
@@ -30,7 +30,7 @@ All public FreeBSD instances are assumed to have a label `os: freebsd`.
 
 ## Playbook Overview
 
-This Ansible playbook performs the following tasks on an Ubuntu server,
+This Ansible playbook performs the following tasks on an FreeBSD server,
 
 1. Install tmux and htop
 1. Enable IPFW
@@ -60,3 +60,7 @@ Use the following command after running terraform to update the encrypted files,
 ```
 ./bin/encrypt.sh <gpg key id>
 ```
+
+## Acknowledgments
+
+* Reference for fail2ban configuration [https://phrye.com/tools/fail2ban-on-freebsd/](https://phrye.com/tools/fail2ban-on-freebsd/)
