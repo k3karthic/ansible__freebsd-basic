@@ -5,6 +5,13 @@ This Ansible playbook in this repository performs the following tasks on a FreeB
 1. Enable IPFW
 1. Install and configure Fail2ban for SSH
 
+## Requirements
+
+Install the following Ansible modules before running the playbook,
+```
+ansible-galaxy collection install community.general
+```
+
 ## Deploy for Free
 
 You can run one server for free using the [Google Cloud Always Free](https://cloud.google.com/free) tier.
@@ -16,7 +23,6 @@ Terraform script for deploying a server in the free tier can be found at [https:
 Install the following Ansible modules before running the playbook,
 ```
 ansible-galaxy collection install google.cloud
-ansible-galaxy collection install community.general
 ```
 
 ### Dynamic Inventory
