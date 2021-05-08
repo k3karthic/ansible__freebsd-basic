@@ -1,6 +1,6 @@
 # Ansible - Basic Setup for FreeBSD 13
 
-This Ansible playbook in this repository performs the following tasks on an FreeBSD 13 instance,
+This Ansible playbook in this repository performs the following tasks on a FreeBSD 13 instance,
 1. Install tmux and htop
 1. Enable IPFW
 1. Install and configure Fail2ban for SSH
