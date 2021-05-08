@@ -33,9 +33,6 @@ All public FreeBSD instances are assumed to have a label `os: freebsd`.
     1. Configure the authentication
 1. Set username and ssh authentication in `inventory/group_vars/
 
-## Playbook Overview
-
-
 ## Deployment
 
 Run the playbook using the following command,
