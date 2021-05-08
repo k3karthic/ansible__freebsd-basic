@@ -1,12 +1,9 @@
 # Ansible - Basic Setup for FreeBSD 13
 
-## Requirements
-
-Install the following Ansible modules before running the playbook,
-```
-ansible-galaxy collection install google.cloud
-ansible-galaxy collection install community.general
-```
+This Ansible playbook in this repository performs the following tasks on an FreeBSD 13 instance,
+1. Install tmux and htop
+1. Enable IPFW
+1. Install and configure Fail2ban for SSH
 
 ## Deploy for Free
 
@@ -14,7 +11,15 @@ You can run one server for free using the [Google Cloud Always Free](https://clo
 
 Terraform script for deploying a server in the free tier can be found at [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance).
 
-## Dynamic Inventory
+### Requirements
+
+Install the following Ansible modules before running the playbook,
+```
+ansible-galaxy collection install google.cloud
+ansible-galaxy collection install community.general
+```
+
+### Dynamic Inventory
 
 This playbook uses the Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) to populate public FreeBSD instances dynamically.
 
@@ -30,11 +35,6 @@ All public FreeBSD instances are assumed to have a label `os: freebsd`.
 
 ## Playbook Overview
 
-This Ansible playbook performs the following tasks on an FreeBSD server,
-
-1. Install tmux and htop
-1. Enable IPFW
-1. Install and configure Fail2ban for SSH
 
 ## Deployment
 
