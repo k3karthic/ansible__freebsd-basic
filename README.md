@@ -5,7 +5,7 @@ This Ansible playbook in this repository performs the following tasks on a FreeB
 1. Enable IPFW
 1. Install and configure Fail2ban for SSH
 
-The playbook assumes the instance runs in Google Cloud using the terraform scripts below,
+The playbook assumes the instance runs in Google Cloud using the terraform script below,
 * [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
 
 ## Requirements
