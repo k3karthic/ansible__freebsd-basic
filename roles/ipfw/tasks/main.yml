@@ -1,13 +1,26 @@
 ---
-- name: configure open firewall
-  community.general.sysrc:
-    name: firewall_type
-    value: open
+- name: configure custom ipfw rules
+  ansible.builtin.copy:
+    src: ipfw.rules
+    dest: /usr/local/etc/ipfw.rules
+    owner: root
+    group: wheel
+    mode: "0755"
 
 - name: enable ipfw on boot
   community.general.sysrc:
     name: firewall_enable
     value: "YES"
+
+- name: set ipfw type as open
+  community.general.sysrc:
+    name: firewall_type
+    value: open
+
+- name: enable custom ipfw rules
+  community.general.sysrc:
+    name: firewall_script
+    value: "/usr/local/etc/ipfw.rules"
 
 - name: restart ipfw
   ansible.builtin.service:

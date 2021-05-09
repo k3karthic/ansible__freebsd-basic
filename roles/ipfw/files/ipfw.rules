@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+##
+## All Open
+##   Default open rules block lo0 which is required for initial setup tasks on Google Cloud
+##   Without this the instance fails to power up after a reboot or stop/start
+##
+
+ipfw -q flush
+ipfw -q add 65534 allow ip from any to any
+
+##
+## Fail2ban
+##
+
+if ! ipfw table 1 info > /dev/null 2>&1; then
+  ipfw -q table 1 create
+  ipfw -q table 1 flush
+fi
+
+ipfw -q add 1 deny ip from "table(1)" to me

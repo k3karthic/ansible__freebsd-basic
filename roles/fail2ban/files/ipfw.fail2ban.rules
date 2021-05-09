@@ -1,6 +1,0 @@
-if ! ipfw table 1 info > /dev/null 2>&1; then
-  ipfw table 1 create
-  ipfw table 1 flush
-fi
-
-ipfw add 1 deny ip from "table(1)" to me
