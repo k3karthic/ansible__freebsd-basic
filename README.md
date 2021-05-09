@@ -5,27 +5,18 @@ This Ansible playbook in this repository performs the following tasks on a FreeB
 1. Enable IPFW
 1. Install and configure Fail2ban for SSH
 
+The playbook assumes the instance runs in Google Cloud using the terraform scripts below,
+* [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
+
 ## Requirements
 
 Install the following Ansible modules before running the playbook,
 ```
 ansible-galaxy collection install community.general
-```
-
-## Deploy for Free
-
-You can run one server for free using the [Google Cloud Always Free](https://cloud.google.com/free) tier.
-
-Terraform script for deploying a server in the free tier can be found at [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance).
-
-### Requirements
-
-Install the following Ansible modules before running the playbook,
-```
 ansible-galaxy collection install google.cloud
 ```
 
-### Dynamic Inventory
+## Dynamic Inventory
 
 This playbook uses the Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) to populate public FreeBSD instances dynamically.
 
@@ -37,7 +28,7 @@ All public FreeBSD instances are assumed to have a label `os: freebsd`.
     1. specify the project id
     1. specify the zone where you have deployed your server on Google Cloud.
     1. Configure the authentication
-1. Set username and ssh authentication in `inventory/group_vars/
+1. Set username and ssh authentication in `inventory/group_vars/`
 
 ## Deployment
 
