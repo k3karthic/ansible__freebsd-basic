@@ -23,3 +23,9 @@
   become: yes
   roles:
     - fail2ban
+
+- name: weekly reboot
+  hosts: all
+  become: yes
+  roles:
+    - reboot
