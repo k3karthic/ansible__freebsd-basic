@@ -13,6 +13,8 @@ The playbook assumes the instance runs in Google Cloud using the terraform scrip
 Install the following Ansible modules before running the playbook,
 ```
 ansible-galaxy collection install community.general
+
+pip install google-auth requests
 ansible-galaxy collection install google.cloud
 ```
 
