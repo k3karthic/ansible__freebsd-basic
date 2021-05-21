@@ -1,7 +1,7 @@
 ---
 - name: install common utilities
   hosts: all
-  become: yes
+  become: true
 
   tasks:
     - name: install common
@@ -14,18 +14,18 @@
 
 - name: configure ipfw
   hosts: all
-  become: yes
+  become: true
   roles:
     - ipfw
 
 - name: install fail2ban
   hosts: all
-  become: yes
+  become: true
   roles:
     - fail2ban
 
 - name: weekly reboot
   hosts: all
-  become: yes
+  become: true
   roles:
     - reboot
