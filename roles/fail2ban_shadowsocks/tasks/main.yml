@@ -1,0 +1,21 @@
+---
+- name: configure shadowsocks filter
+  ansible.builtin.copy:
+    src: shadowsocks-libev.conf
+    dest: /usr/local/etc/fail2ban/filter.d/shadowsocks-libev.conf
+    owner: root
+    group: wheel
+    mode: "0644"
+
+- name: configure shadowsocks jail
+  ansible.builtin.copy:
+    src: shadowsocks-libev.local
+    dest: /usr/local/etc/fail2ban/jail.d/shadowsocks-libev.local
+    owner: root
+    group: wheel
+    mode: "0644"
+
+- name: restart fail2ban
+  ansible.builtin.service:
+    name: fail2ban
+    state: restarted

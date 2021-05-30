@@ -19,9 +19,3 @@ if ! ipfw table 1 info > /dev/null 2>&1; then
 fi
 
 ipfw -q add 1 deny ip from "table(1)" to me
-
-##
-## Shadowsocks
-##
-
-ipfw -q add 1 allow tcp from any to me 8388

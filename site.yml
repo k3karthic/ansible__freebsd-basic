@@ -18,11 +18,17 @@
   roles:
     - ipfw
 
-- name: install fail2ban
+- name: fail2ban for ssh
   hosts: all
   become: true
   roles:
-    - fail2ban
+    - fail2ban_ssh
+
+- name: fail2ban for shadowsocks
+  hosts: gcp_label_shadowsocks_service_yes
+  become: true
+  roles:
+    - fail2ban_shadowsocks
 
 - name: weekly reboot
   hosts: all
