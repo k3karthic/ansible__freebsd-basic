@@ -1,0 +1,10 @@
+[shadowsocks-libev]
+enabled = true
+
+logpath = /var/log/daemon.log
+
+action = ipfw-table[name=ss-server,port=8388,protocol=tcp]
+
+findtime = 3600
+maxretry = 3
+bantime = 3600
