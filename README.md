@@ -2,8 +2,10 @@
 
 This Ansible playbook in this repository performs the following tasks on a FreeBSD 13 instance,
 1. Install tmux and htop
-1. Enable IPFW
-1. Install and configure Fail2ban for SSH
+1. Enable and configure IPFW for Fail2ban
+1. Install and configure Fail2ban for the following services,
+    1. SSH
+    2. Shadowsocks
 
 The playbook assumes the instance runs in Google Cloud using the terraform script below,
 * [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
