@@ -1,18 +1,4 @@
 ---
-- name: install reset_date script
-  ansible.builtin.copy:
-    src: reset_date.sh
-    dest: /root/reset_date.sh
-    owner: root
-    group: wheel
-    mode: "0700"
-
-- name: run reset_date every sunday
-  ansible.builtin.cron:
-    name: "update and reset_date"
-    special_time: "hourly"
-    job: "/root/reset_date.sh"
-
 - name: install ntp.conf
   ansible.builtin.copy:
     src: ntp.conf
@@ -20,3 +6,15 @@
     owner: root
     group: wheel
     mode: "0544"
+
+# https://cromwell-intl.com/open-source/google-freebsd-tls/freebsd.html
+- name: fix clock drift
+  sysctl:
+    name: kern.timecounter.hardware
+    value: ACPI-fast
+    state: present
+
+- name: enable ntpdate on boot
+  community.general.sysrc:
+    name: google_clock_skew_daemon_enable
+    value: "NO"
