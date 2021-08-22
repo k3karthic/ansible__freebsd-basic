@@ -35,3 +35,9 @@
   become: true
   roles:
     - reboot
+
+- name: time sync
+  hosts: all
+  become: true
+  roles:
+    - time_sync

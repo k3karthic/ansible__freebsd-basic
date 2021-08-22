@@ -1,0 +1,22 @@
+---
+- name: install reset_date script
+  ansible.builtin.copy:
+    src: reset_date.sh
+    dest: /root/reset_date.sh
+    owner: root
+    group: wheel
+    mode: "0700"
+
+- name: run reset_date every sunday
+  ansible.builtin.cron:
+    name: "update and reset_date"
+    special_time: "hourly"
+    job: "/root/reset_date.sh"
+
+- name: install ntp.conf
+  ansible.builtin.copy:
+    src: ntp.conf
+    dest: /etc/ntp.conf
+    owner: root
+    group: wheel
+    mode: "0544"
