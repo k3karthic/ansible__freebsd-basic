@@ -11,6 +11,11 @@ The playbook assumes the instance runs in Google Cloud using the scripts below,
 * GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
 * Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
 
+## Code Mirrors
+
+* GitHub: [github.com/k3karthic/ansible__freebsd-basic](https://github.com/k3karthic/ansible__freebsd-basic)
+* Codeberg.org: [codeberg.org/k3karthic/ansible__freebsd-basic](https://codeberg.org/k3karthic/ansible__freebsd-basic)
+
 ## Requirements
 
 Install the following Ansible modules before running the playbook,
