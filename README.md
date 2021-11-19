@@ -1,14 +1,16 @@
 # Ansible - Basic Setup for FreeBSD 13
 
-This Ansible playbook in this repository performs the following tasks on a FreeBSD 13 instance,
+This Ansible playbook in this repository performs the following tasks on FreeBSD 13,
 1. Install tmux and htop
 1. Enable and configure IPFW for Fail2ban
 1. Install and configure Fail2ban for the following services,
     1. SSH
     2. Shadowsocks
 
-The playbook assumes the instance runs in Google Cloud using the terraform script below,
-* [https://github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
+The playbook assumes the instance runs in Google Cloud using the scripts below,
+* terraform__gcloud-instance
+    * GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
+    * Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
 
 ## Requirements
 
@@ -22,9 +24,9 @@ ansible-galaxy collection install google.cloud
 
 ## Dynamic Inventory
 
-This playbook uses the Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) to populate public FreeBSD instances dynamically.
+The Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) dynamically populates public FreeBSD instances.
 
-All public FreeBSD instances are assumed to have a label `os: freebsd`.
+The target FreeBSD instances must have the label `os: freebsd`.
 
 ## Playbook Configuration
 
@@ -43,9 +45,7 @@ Run the playbook using the following command,
 
 ## Encryption
 
-Sensitive files like the SSH private keys are encrypted before being stored in the repository.
-
-You must add the unencrypted file paths to `.gitignore`.
+Encrypt sensitive files (Shadowsocks config, SSH private keys) before saving them. `.gitignore` must contain the unencrypted file paths.
 
 Use the following command to decrypt the files after cloning the repository,
 
