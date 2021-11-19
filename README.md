@@ -8,9 +8,8 @@ This Ansible playbook in this repository performs the following tasks on FreeBSD
     2. Shadowsocks
 
 The playbook assumes the instance runs in Google Cloud using the scripts below,
-* terraform__gcloud-instance
-    * GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
-    * Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
+* GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
+* Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
 
 ## Requirements
 
