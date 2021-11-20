@@ -15,7 +15,7 @@ The playbook assumes the instance runs in Google Cloud using the Terraform scrip
 ## Code Mirrors
 
 * GitHub: [github.com/k3karthic/ansible__freebsd-basic](https://github.com/k3karthic/ansible__freebsd-basic)
-* Codeberg.org: [codeberg.org/k3karthic/ansible__freebsd-basic](https://codeberg.org/k3karthic/ansible__freebsd-basic)
+* Codeberg: [codeberg.org/k3karthic/ansible__freebsd-basic](https://codeberg.org/k3karthic/ansible__freebsd-basic)
 
 ## Requirements
 
