@@ -1,6 +1,6 @@
 # Ansible - Basic Setup for FreeBSD 13
 
-This Ansible playbook in this repository performs the following tasks on FreeBSD 13,
+This Ansible playbook in this repository does the following tasks on FreeBSD 13,
 1. Install tmux and htop
 1. Enable and configure IPFW for Fail2ban
 1. Install and configure Fail2ban for the following services,
@@ -19,7 +19,7 @@ The playbook assumes the instance runs in Google Cloud using the Terraform scrip
 
 ## Requirements
 
-Install the following Ansible modules before running the playbook,
+Install the following before running the playbook,
 ```
 ansible-galaxy collection install community.general
 
