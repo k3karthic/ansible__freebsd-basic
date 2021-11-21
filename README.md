@@ -7,7 +7,7 @@ This Ansible playbook in this repository does the following tasks on FreeBSD 13,
     1. SSH
     2. Shadowsocks
 
-The following Terraform script creates an instance in Google Cloud,
+**Assumption:** The instance runs in Google Cloud using the terraform script below,
 * terraform__gcloud-instance
     * GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
     * Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
