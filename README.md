@@ -21,10 +21,9 @@ This Ansible playbook in this repository does the following tasks on FreeBSD 13,
 
 Install the following before running the playbook,
 ```
-ansible-galaxy collection install community.general
-
-pip install google-auth requests
-ansible-galaxy collection install google.cloud
+$ ansible-galaxy collection install community.general
+$ pip install google-auth requests
+$ ansible-galaxy collection install google.cloud
 ```
 
 ## Dynamic Inventory
@@ -45,7 +44,7 @@ The target FreeBSD instances must have the label `os: freebsd`.
 
 Run the playbook using the following command,
 ```
-./bin/apply.sh
+$ ./bin/apply.sh
 ```
 
 ## Encryption
@@ -55,13 +54,13 @@ Encrypt sensitive files (SSH private keys) before saving them. `.gitignore` must
 Use the following command to decrypt the files after cloning the repository,
 
 ```
-./bin/decrypt.sh
+$ ./bin/decrypt.sh
 ```
 
 Use the following command after running terraform to update the encrypted files,
 
 ```
-./bin/encrypt.sh <gpg key id>
+$ ./bin/encrypt.sh <gpg key id>
 ```
 
 ## Acknowledgments
