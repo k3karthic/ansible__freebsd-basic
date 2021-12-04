@@ -1,4 +1,4 @@
-# Ansible - Basic Setup for FreeBSD 13
+# Ansible — Basic Setup for FreeBSD 13
 
 This Ansible playbook in this repository does the following tasks on FreeBSD 13,
 1. Install tmux and htop
@@ -7,7 +7,7 @@ This Ansible playbook in this repository does the following tasks on FreeBSD 13,
     1. SSH
     2. Shadowsocks
 
-**Assumption:** The instance runs in Google Cloud using the terraform script below,
+**Assumption:** The instance runs in Google Cloud using the Terraform script below,
 * terraform__gcloud-instance
     * GitHub: [github.com/k3karthic/terraform__gcloud-instance](https://github.com/k3karthic/terraform__gcloud-instance)
     * Codeberg: [codeberg.org/k3karthic/terraform__gcloud-instance](https://codeberg.org/k3karthic/terraform__gcloud-instance)
@@ -28,15 +28,15 @@ $ ansible-galaxy collection install google.cloud
 
 ## Dynamic Inventory
 
-The Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) dynamically populates public FreeBSD instances.
+The Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) populates public FreeBSD instances.
 
 The target FreeBSD instances must have the label `os: freebsd`.
 
 ## Playbook Configuration
 
 1. Create `inventory/google.gcp_compute.yml` based on `inventory/google.gcp_compute.yml.sample`,
-    1. specify the project id
-    1. specify the zone where you have deployed your server on Google Cloud
+    1. Specify the project ID
+    1. Specify the zone where you have deployed your server on Google Cloud
     1. Configure the authentication
 1. Set username and ssh authentication in `inventory/group_vars/all.yml`.
 
