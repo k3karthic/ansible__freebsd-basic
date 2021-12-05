@@ -30,7 +30,7 @@ $ ansible-galaxy collection install google.cloud
 
 The Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html) populates public FreeBSD instances.
 
-The target FreeBSD instances must have the label `os: freebsd`.
+All target FreeBSD instances must have the label `os: freebsd`.
 
 ## Playbook Configuration
 
