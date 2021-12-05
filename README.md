@@ -38,7 +38,7 @@ All target FreeBSD instances must have the label `os: freebsd`.
     1. Specify the project ID
     1. Specify the zone where you have deployed your server on Google Cloud
     1. Configure the authentication
-1. Set username and ssh authentication in `inventory/group_vars/all.yml`
+1. Set username and SSH authentication in `inventory/group_vars/all.yml`
 
 ## Deployment
 
