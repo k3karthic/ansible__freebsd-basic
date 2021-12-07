@@ -32,7 +32,7 @@ The Google [Ansible Inventory Plugin](https://docs.ansible.com/ansible/latest/co
 
 All target FreeBSD instances must have the label `os: freebsd`.
 
-## Playbook Configuration
+## Configuration
 
 1. Create `inventory/google.gcp_compute.yml` based on `inventory/google.gcp_compute.yml.sample`,
     1. Specify the project ID
