@@ -1,10 +1,10 @@
 ---
-- name: install common utilities
+- name: Install common utilities
   hosts: all
   become: true
 
   tasks:
-    - name: install common
+    - name: Install common
       community.general.pkgng:
         name: "{{ item }}"
         state: latest
@@ -12,31 +12,31 @@
         - tmux
         - htop
 
-- name: configure ipfw
+- name: Configure ipfw
   hosts: all
   become: true
   roles:
     - ipfw
 
-- name: fail2ban for ssh
+- name: Fail2ban for ssh
   hosts: all
   become: true
   roles:
     - fail2ban_ssh
 
-- name: fail2ban for shadowsocks
+- name: Fail2ban for shadowsocks
   hosts: gcp_label_shadowsocks_service_yes
   become: true
   roles:
     - fail2ban_shadowsocks
 
-- name: weekly reboot
+- name: Weekly reboot
   hosts: all
   become: true
   roles:
     - reboot
 
-- name: time sync
+- name: Time sync
   hosts: all
   become: true
   roles:

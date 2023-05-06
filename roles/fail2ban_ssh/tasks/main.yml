@@ -1,10 +1,10 @@
 ---
-- name: install dependencies
+- name: Install dependencies
   community.general.pkgng:
     name: py39-fail2ban
     state: latest
 
-- name: configure fail2ban ipfw-table action
+- name: Configure fail2ban ipfw-table action
   ansible.builtin.copy:
     src: ipfw-table.local
     dest: /usr/local/etc/fail2ban/action.d/ipfw-table.local
@@ -12,7 +12,7 @@
     group: wheel
     mode: "0644"
 
-- name: configure sshd jail
+- name: Configure sshd jail
   ansible.builtin.copy:
     src: sshd.local
     dest: /usr/local/etc/fail2ban/jail.d/sshd.local
@@ -20,17 +20,17 @@
     group: wheel
     mode: "0644"
 
-- name: enable fail2ban on boot
+- name: Enable fail2ban on boot
   community.general.sysrc:
     name: fail2ban_enable
     value: "YES"
 
-- name: restart fail2ban
+- name: Restart fail2ban
   ansible.builtin.service:
     name: fail2ban
     state: restarted
 
-- name: configure newsyslog
+- name: Configure newsyslog
   ansible.builtin.copy:
     src: newsyslog.conf
     dest: /etc/newsyslog.conf.d/fail2ban.conf

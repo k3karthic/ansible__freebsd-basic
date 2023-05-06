@@ -1,5 +1,5 @@
 ---
-- name: configure custom ipfw rules
+- name: Configure custom ipfw rules
   ansible.builtin.copy:
     src: ipfw.rules
     dest: /usr/local/etc/ipfw.rules
@@ -7,22 +7,22 @@
     group: wheel
     mode: "0755"
 
-- name: enable ipfw on boot
+- name: Enable ipfw on boot
   community.general.sysrc:
     name: firewall_enable
     value: "YES"
 
-- name: set ipfw type as open
+- name: Set ipfw type as open
   community.general.sysrc:
     name: firewall_type
     value: open
 
-- name: enable custom ipfw rules
+- name: Enable custom ipfw rules
   community.general.sysrc:
     name: firewall_script
     value: "/usr/local/etc/ipfw.rules"
 
-- name: restart ipfw
+- name: Restart ipfw
   ansible.builtin.service:
     name: ipfw
     state: restarted

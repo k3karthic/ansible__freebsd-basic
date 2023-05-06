@@ -1,5 +1,5 @@
 ---
-- name: install ntp.conf
+- name: Install ntp.conf
   ansible.builtin.copy:
     src: ntp.conf
     dest: /etc/ntp.conf
@@ -8,13 +8,13 @@
     mode: "0544"
 
 # https://cromwell-intl.com/open-source/google-freebsd-tls/freebsd.html
-- name: fix clock drift
-  sysctl:
+- name: Fix clock drift
+  ansible.posix.sysctl:
     name: kern.timecounter.hardware
     value: ACPI-fast
     state: present
 
-- name: enable ntpdate on boot
+- name: Enable ntpdate on boot
   community.general.sysrc:
     name: google_clock_skew_daemon_enable
     value: "NO"
