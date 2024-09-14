@@ -1,7 +1,7 @@
 ---
 - name: Install dependencies
   community.general.pkgng:
-    name: py39-fail2ban
+    name: py311-fail2ban
     state: latest
 
 - name: Configure fail2ban ipfw-table action
